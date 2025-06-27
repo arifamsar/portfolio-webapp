@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     // '@nuxt/fonts',
     // '@nuxt/icon',
     // '@nuxt/image',
-    '@nuxt/scripts',
+    // '@nuxt/scripts',
     'shadcn-nuxt',
     '@nuxtjs/supabase',
   ],
