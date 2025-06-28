@@ -26,6 +26,13 @@
 
 	const isDark = inject("isDark");
 	const toggleDark = inject("toggleDark");
+
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 </script>
 
 <template>

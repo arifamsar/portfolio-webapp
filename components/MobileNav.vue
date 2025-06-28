@@ -27,6 +27,14 @@ onUnmounted(() => {
 
 const isDark = inject('isDark')
 const toggleDark = inject('toggleDark')
+
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+    isOpen.value = false; // Close the mobile nav after clicking a link
+  }
+};
 </script>
 
 <template>

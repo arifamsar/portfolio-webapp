@@ -49,7 +49,6 @@
                 :key="project.title"
                 :project="project"
                                 :class="['animate-on-scroll-hidden', { 'animate-on-scroll-visible': projectsInView }]"
-                :style="{ 'animation-delay': `${index * 0.1}s` }"
               />
             </div>
           </div>

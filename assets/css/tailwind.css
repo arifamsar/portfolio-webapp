@@ -70,40 +70,89 @@
 .animate-on-scroll-hidden {
   opacity: 0;
   transform: translateY(20px);
-  filter: blur(5px);
 }
 
 .animate-on-scroll-visible {
   opacity: 1;
   transform: translateY(0);
-  filter: blur(0);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out, filter 0.8s ease-out;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.futuristic-gradient-background {
-  background: 
-    radial-gradient(circle at 15% 25%, oklch(0.7 0.28 290 / 0.3), transparent 60%),
-    radial-gradient(circle at 85% 75%, oklch(0.8 0.2 190 / 0.3), transparent 60%),
-    linear-gradient(135deg, var(--background) 0%, var(--background) 50%, var(--background) 100%);
+.base-futuristic-gradient-background {
   position: relative;
   overflow: hidden;
 }
 
-.futuristic-gradient-background::before {
+.base-futuristic-gradient-background::before {
   content: '';
   position: absolute;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
+  background-size: 400% 400%;
+  animation: move-background 30s infinite alternate linear;
+  opacity: 0.7;
+}
+
+.about-gradient-background {
+  background: 
+    radial-gradient(circle at 15% 25%, oklch(0.7 0.28 290 / 0.3), transparent 60%),
+    radial-gradient(circle at 85% 75%, oklch(0.8 0.2 190 / 0.3), transparent 60%),
+    linear-gradient(135deg, oklch(0.08 0.05 280) 0%, oklch(0.08 0.05 280) 50%, oklch(0.08 0.05 280) 100%);
+}
+
+.about-gradient-background::before {
   background: 
     radial-gradient(circle at 20% 30%, oklch(0.7 0.28 290 / 0.1) 0%, transparent 50%),
     radial-gradient(circle at 80% 70%, oklch(0.8 0.2 190 / 0.1) 0%, transparent 50%),
     linear-gradient(45deg, oklch(0.7 0.28 290 / 0.05) 0%, transparent 50%),
     linear-gradient(-45deg, oklch(0.8 0.2 190 / 0.05) 0%, transparent 50%);
-  animation: move-background 30s infinite alternate linear;
-  opacity: 0.7;
-  filter: saturate(1.5) brightness(1.2);
+}
+
+.projects-gradient-background {
+  background: 
+    radial-gradient(circle at 20% 80%, oklch(0.6 0.25 250 / 0.3), transparent 60%),
+    radial-gradient(circle at 80% 20%, oklch(0.7 0.3 320 / 0.3), transparent 60%),
+    linear-gradient(135deg, oklch(0.07 0.04 260) 0%, oklch(0.07 0.04 260) 50%, oklch(0.07 0.04 260) 100%);
+}
+
+.projects-gradient-background::before {
+  background: 
+    radial-gradient(circle at 25% 75%, oklch(0.6 0.25 250 / 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 25%, oklch(0.7 0.3 320 / 0.1) 0%, transparent 50%),
+    linear-gradient(45deg, oklch(0.6 0.25 250 / 0.05) 0%, transparent 50%),
+    linear-gradient(-45deg, oklch(0.7 0.3 320 / 0.05) 0%, transparent 50%);
+}
+
+.skills-gradient-background {
+  background: 
+    radial-gradient(circle at 10% 90%, oklch(0.5 0.2 150 / 0.3), transparent 60%),
+    radial-gradient(circle at 90% 10%, oklch(0.6 0.22 30 / 0.3), transparent 60%),
+    linear-gradient(135deg, oklch(0.09 0.06 180) 0%, oklch(0.09 0.06 180) 50%, oklch(0.09 0.06 180) 100%);
+}
+
+.skills-gradient-background::before {
+  background: 
+    radial-gradient(circle at 15% 85%, oklch(0.5 0.2 150 / 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 85% 15%, oklch(0.6 0.22 30 / 0.1) 0%, transparent 50%),
+    linear-gradient(45deg, oklch(0.5 0.2 150 / 0.05) 0%, transparent 50%),
+    linear-gradient(-45deg, oklch(0.6 0.22 30 / 0.05) 0%, transparent 50%);
+}
+
+.contact-gradient-background {
+  background: 
+    radial-gradient(circle at 30% 30%, oklch(0.75 0.2 200 / 0.3), transparent 60%),
+    radial-gradient(circle at 70% 70%, oklch(0.85 0.15 10 / 0.3), transparent 60%),
+    linear-gradient(135deg, oklch(0.06 0.03 20) 0%, oklch(0.06 0.03 20) 50%, oklch(0.06 0.03 20) 100%);
+}
+
+.contact-gradient-background::before {
+  background: 
+    radial-gradient(circle at 35% 35%, oklch(0.75 0.2 200 / 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 65% 65%, oklch(0.85 0.15 10 / 0.1) 0%, transparent 50%),
+    linear-gradient(45deg, oklch(0.75 0.2 200 / 0.05) 0%, transparent 50%),
+    linear-gradient(-45deg, oklch(0.85 0.15 10 / 0.05) 0%, transparent 50%);
 }
 
 @keyframes move-background {
@@ -198,6 +247,9 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
   }
   body {
     @apply bg-background text-foreground;

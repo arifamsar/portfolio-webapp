@@ -16,7 +16,7 @@
           <ul class="space-y-2 text-base text-muted-foreground">
             <li v-for="(skill, skillIndex) in category.items" :key="skillIndex" class="flex items-center animate-on-scroll-hidden"
               :class="{ 'animate-on-scroll-visible': skillsInView }"
-              :style="{ 'animation-delay': `${(index * 0.1) + (skillIndex * 0.05)}s` }"
+              
             >
               <span :class="skill.icon" class="mr-2 text-xl text-accent"></span>
               {{ skill.name }}

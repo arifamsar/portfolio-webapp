@@ -5,7 +5,7 @@
         About Me
       </h2>
       <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div :class="['animate-on-scroll-hidden', { 'animate-on-scroll-visible': aboutInView }]" :style="{ 'animation-delay': `0.1s` }">
+        <div :class="['animate-on-scroll-hidden', { 'animate-on-scroll-visible': aboutInView }]">
           <p class="text-lg leading-relaxed mb-4">
             My journey into Android development began with a deep curiosity for how mobile technology 
             can solve everyday problems and enhance lives. I thrive on transforming complex ideas 
@@ -21,7 +21,7 @@
             I enjoy contributing to open-source projects and sharing knowledge within the developer community.
           </p>
         </div>
-        <div class="flex justify-center animate-on-scroll-hidden" :class="{ 'animate-on-scroll-visible': aboutInView }" :style="{ 'animation-delay': `0.2s` }">
+        <div class="flex justify-center animate-on-scroll-hidden" :class="{ 'animate-on-scroll-visible': aboutInView }">
           <!-- Placeholder for an image or illustration -->
           <div class="w-64 h-64 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-full flex items-center justify-center text-primary-foreground text-xl font-bold">
             Your Photo Here
